@@ -4,6 +4,7 @@ import { MovieService } from './movie.service';
 import { response } from 'express';
 import { CacheInterceptor } from '@nestjs/cache-manager';
 
+
 @UseInterceptors(CacheInterceptor)
 @Controller('movie')
 export class MovieController {

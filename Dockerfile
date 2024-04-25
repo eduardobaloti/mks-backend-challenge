@@ -3,5 +3,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 COPY . .
+COPY .env .env.development ./
 RUN npm run build
-CMD [ "node", "dist/main.js" ]
+EXPOSE 3001
+CMD ["npm", "run", "start:prod"]
