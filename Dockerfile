@@ -1,9 +1,12 @@
-FROM node:18
+FROM node:boron
+
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-COPY package*.json ./
+
+COPY package.json /usr/src/app/
 RUN npm install
-COPY . .
-COPY .env .env.development ./
-RUN npm run build
-EXPOSE 3001
-CMD ["npm", "run", "start:prod"]
+
+COPY . /usr/src/app
+
+EXPOSE 8080
+CMD [ "npm", "start" ]
