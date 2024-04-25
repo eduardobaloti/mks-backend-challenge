@@ -1,6 +1,5 @@
 import { Movie } from "src/entities/movie.entity";
 import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
-import dotenv from 'dotenv';
 import { ConfigModule } from '@nestjs/config';
 
 
