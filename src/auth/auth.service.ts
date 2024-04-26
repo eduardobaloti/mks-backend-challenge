@@ -13,7 +13,7 @@ export class AuthService {
     ) { }
 
     async login(user) {
-        const payload = { sub: user.id, email: user.email };
+        const payload = { username: user.username, password: user.password };
         return { token: this.jwtService.sign(payload) }
     }
 
@@ -24,7 +24,7 @@ export class AuthService {
         } catch (error) {
             return null;
         }
-
+        if (signUser === null) return null;
         const isPasswordValid = await compareSync(password, signUser.password)
         if (!isPasswordValid) return null;
         return signUser

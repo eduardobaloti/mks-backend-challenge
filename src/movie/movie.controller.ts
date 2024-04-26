@@ -4,15 +4,12 @@ import { MovieService } from './movie.service';
 import { response } from 'express';
 import { CacheInterceptor } from '@nestjs/cache-manager';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiHeader, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiHeader, ApiTags } from '@nestjs/swagger';
 
 
 @UseInterceptors(CacheInterceptor)
 @UseGuards(AuthGuard('jwt'))
-@ApiHeader({
-    name: "JWT Token",
-    description: "AWS authorization header. Create a token with /Login and pass as 'Bearer [your token]'",
-})
+@ApiBearerAuth('access-token')
 @ApiTags('Movies')
 @Controller('movie')
 export class MovieController {
