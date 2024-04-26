@@ -1,4 +1,6 @@
 import { Movie } from "src/entities/movie.entity";
+import { User } from "src/entities/user.entity";
+
 import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
 import { ConfigModule } from '@nestjs/config';
 
@@ -14,7 +16,7 @@ const dbConfig: PostgresConnectionOptions =
     username: process.env.DATABASE,
 
     password: process.env.PASSWORD,
-    entities: [Movie],
+    entities: [Movie, User],
     ssl: true,
     extra: {
         ssl: {

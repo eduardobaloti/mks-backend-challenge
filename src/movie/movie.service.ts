@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { MovieDto } from './dto/MovieDto';
+import { MovieDto } from '../dto/MovieDto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Movie } from 'src/entities/movie.entity';

@@ -1,11 +1,15 @@
-import { BadRequestException, Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, UseInterceptors } from '@nestjs/common';
-import { MovieDto } from './dto/MovieDto';
+import { BadRequestException, Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, UseGuards, UseInterceptors } from '@nestjs/common';
+import { MovieDto } from '../dto/MovieDto';
 import { MovieService } from './movie.service';
 import { response } from 'express';
 import { CacheInterceptor } from '@nestjs/cache-manager';
+import { AuthGuard } from '@nestjs/passport';
+import { ApiTags } from '@nestjs/swagger';
 
 
 @UseInterceptors(CacheInterceptor)
+@UseGuards(AuthGuard('jwt'))
+@ApiTags('Movies')
 @Controller('movie')
 export class MovieController {
     constructor(private readonly movieService: MovieService) { }
