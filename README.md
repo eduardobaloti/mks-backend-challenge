@@ -1,8 +1,8 @@
 Desafio da mks
 ===========================
 
-Api criada com o intuito de realizar uum desafio de backend utilizando Typescript, Nest, TypeOrm, Docker, Redis e Postgres
+A API foi desenvolvida para enfrentar um desafio de backend, utilizando TypeScript, Nest, TypeORM, Docker, Redis e Postgres.
 
-A Api foi hospedada no seguinte link: https://mks-backend-challenge-ux9x.onrender.com/api
+Ela está disponível neste link: https://mks-backend-challenge-ux9x.onrender.com/api.
 
-para rodar localmente, é só fazer um git clone, após isso npm install e npm run start 🍿
+Para executá-la localmente, basta clonar o repositório via Git, e então executar os comandos npm install e npm run start 🍿.
